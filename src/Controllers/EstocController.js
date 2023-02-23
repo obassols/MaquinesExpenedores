@@ -118,7 +118,8 @@ const updateOneEstoc = (async (req, res) => {
       dataVenda: body.dataVenda ? body.dataVenda : null,
       ubicacio: body.ubicacio ? body.ubicacio : null
     };
-    const updatedEstoc = await estocService.updateOneEstoc(idEstoc, canvis);
+    await estocService.updateOneEstoc(idEstoc, canvis);
+    const updatedEstoc = await estocService.getOneEstoc(idEstoc);
     res.status(200).send({ status: "OK", data: updatedEstoc });
   } catch (error) {
     res

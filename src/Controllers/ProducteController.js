@@ -94,7 +94,8 @@ const updateOneProducte = (async (req, res) => {
       preu: body.preu ? body.preu : null,
       categoria: body.categoria ? body.categoria : null
     };
-    const updatedProducte = await producteService.updateOneProducte(nomProducte, canvis);
+    await producteService.updateOneProducte(nomProducte, canvis);
+    const updatedProducte = await producteService.getOneProducte(nomProducte);
     res.status(200).send({ status: "OK", data: updatedProducte });
   } catch (error) {
     res
