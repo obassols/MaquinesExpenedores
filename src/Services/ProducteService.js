@@ -34,7 +34,7 @@ const createNewProducte = (async (producte) => {
 const updateOneProducte = (async (nomProducte, canvis) => {
   try {
     const updatedAt = new Date().toLocaleDateString("en-US", { timeZone: "UTC" });
-    const updatedProducte = await db.updateOneProducte(nomProducte, canvis.tipus, canvis.preu, canvis.categoria, updatedAt);
+    const updatedProducte = await db.updateOneProducte(nomProducte, canvis.nom, canvis.tipus, canvis.preu, canvis.categoria, updatedAt);
     return updatedProducte;
   } catch (error) {
     throw error;

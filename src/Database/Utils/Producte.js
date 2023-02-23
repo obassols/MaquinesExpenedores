@@ -43,10 +43,10 @@ const createNewProducte = (nom, tipus, preu, categoria, createdAt) => {
   });
 };
 
-const updateOneProducte = (nom, tipus, preu, categoria, updatedAt) => {
+const updateOneProducte = (nom, canviNom, tipus, preu, categoria, updatedAt) => {
   return new Promise((resolve, reject) => {
-    const query = 'UPDATE Producte SET tipus = ?, preu = ?, categoria = ?, updatedAt = ? WHERE nom = ?';
-    const values = [tipus, preu, categoria, updatedAt, nom];
+    const query = 'UPDATE Producte SET nom = ?, tipus = ?, preu = ?, categoria = ?, updatedAt = ? WHERE nom = ?';
+    const values = [canviNom, tipus, preu, categoria, updatedAt, nom];
     db.run(query, values, (err, row) => {
       if (err) {
         reject(err);

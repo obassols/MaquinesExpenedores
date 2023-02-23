@@ -89,6 +89,7 @@ const updateOneProducte = (async (req, res) => {
 
   try {
     const canvis = {
+      nom: body.nom ? body.nom : null,
       tipus: body.tipus ? body.tipus : null,
       preu: body.preu ? body.preu : null,
       categoria: body.categoria ? body.categoria : null
